@@ -33,11 +33,14 @@
 <div id="page-wrapper">
 
 	<!-- Header -->
-	<header id="header" class="alt">
-		<h1><a href="index.html">电力智能机器人工程技术研究中心|AMaze</a></h1>
-		<nav>
-			<a href="#menu">菜单</a>
-		</nav>
+	<header id="header">
+		<div style="display: flex;align-items: center">
+			<img src="images/logo.png" style="width: 1em;height:1em; margin-right: 2em">
+			<h1><a href="index.html">电力智能机器人工程技术研究中心|AMaze</a></h1>
+			<nav>
+				<a href="#menu">菜单</a>
+			</nav>
+		</div>
 	</header>
 </div>
 <!-- Menu -->
@@ -151,7 +154,7 @@
 						<tbody>
 						<tr>
 							<td>IEEE 2821-2020</td>
-							<td><a target="_blank" href="https://www.antpedia.com/standard/1107315247.html">输电线路无人机巡检系统指南</a></td>
+							<td><a target="_blank" href="https://standards.ieee.org/ieee/2821/7642/">输电线路无人机巡检系统指南</a></td>
 							<td>已发布</td>
 						</tr>
 						<tr>
@@ -224,26 +227,8 @@
 
 
 <!-- Footer -->
+<!-- Footer -->
 <style>
-	/*.ftCo{*/
-	/*	display: flex;*/
-	/*	width: 100%;*/
-	/*}*/
-	/*.ft1{*/
-	/*	width: 60vh;*/
-	/*}*/
-	/*.ft2{*/
-	/*	margin-left: -10vh;*/
-	/*	width: 30vh;*/
-	/*}*/
-	/*.ft3{*/
-	/*	display: flex;*/
-	/*	width: 40vh;*/
-	/*}*/
-
-	/*.ft3 .div1{*/
-	/*	margin-left: 10vh;*/
-	/*}*/
 	.footer {
 		background-color: transparent;
 		color: #ffffff;
@@ -251,7 +236,7 @@
 	}
 
 	.container {
-		max-width: 1200px;
+		max-width: 1250px;
 		margin: 0 auto;
 		padding: 0 15px;
 	}
@@ -265,50 +250,35 @@
 
 	.footer-info-grid {
 		flex: 1;
-		min-width: 250px;
+		min-width: 80px;
 		margin-bottom: 30px;
 	}
 
 	.footer-info h4 {
 		color: #ffffff;
-		font-size: 1.2em;
-		margin-bottom: 20px;
+		font-size: 1em;
+		margin-bottom: 10px;
 		font-weight: 600;
 	}
 
-	.footer-info ul {
-		list-style: none;
+	.footer-info p {
+		color: #a8b2bc;
 		padding: 0;
 		margin: 0;
+		font-size: 0.9em;
 	}
 
-	.footer-info ul li {
-		margin-bottom: 10px;
-	}
 
-	.footer-info ul li a {
+	.footer-info p a {
 		color: #a8b2bc;
 		text-decoration: none;
 		transition: color 0.3s ease;
 	}
 
-	.footer-info ul li a:hover {
+	.footer-info p a:hover {
 		color: #ffffff;
 	}
 
-	.ft3 {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.ft3 > div {
-		flex: 1;
-	}
-
-	.ft3 img {
-		max-width: 125px;
-		height: auto;
-	}
 
 	.social-icons {
 		text-align: center;
@@ -328,6 +298,18 @@
 		font-size: 24px;
 		color: #a8b2bc;
 		transition: color 0.3s ease;
+		position: relative;
+
+	}
+
+	.social-icons ul li a {
+		border-bottom: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
 	}
 
 	.social-icons ul li:hover {
@@ -350,118 +332,291 @@
 		.footer-info-grid {
 			width: 100%;
 		}
+	}
 
-		.ft3 {
-			flex-direction: column;
-		}
+	/* 弹窗主体样式 */
+	.modal {
+		display: none;
+		/* 确保弹窗在页面中心显示 */
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 
-		.ft3 > div {
-			margin-bottom: 20px;
-		}
+		/* 自定义背景颜色和边框等外观 */
+		background-color: #4c5c96;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	}
+
+	/* 弹窗内部对话框样式 */
+	.modal-dialog {
+		max-width: 500px;
+		margin: 1.75rem auto;
+	}
+
+	/* 弹窗内容区域样式 */
+	.modal-content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		pointer-events: all;
+		background-color: transparent;
+		background-clip: padding-box;
+		border: none;
+		border-radius: 5px;
+		outline: 0;
+	}
+
+	/*!* 弹窗头部样式 *!*/
+	/*.modal-header {*/
+	/*    display: flex;*/
+	/*    align-items: center;*/
+	/*    justify-content: space-between;*/
+	/*    padding: 1rem 1rem;*/
+	/*    border-bottom: 1px solid #dee2e6;*/
+	/*}*/
+
+	/*!* 弹窗标题样式 *!*/
+	/*.modal-title {*/
+	/*    margin-bottom: 0;*/
+	/*    line-height: 1.5;*/
+	/*    font-size: 1.25rem;*/
+	/*    font-weight: 500;*/
+	/*}*/
+
+	/*!* 关闭按钮样式 *!*/
+	/*.btn-close {*/
+	/*    background-image: url('images/close.svg');*/
+	/*    background-position: 75% 25%;*/
+	/*    background-repeat: no-repeat;*/
+	/*    border: none;*/
+	/*    content: '';*/
+	/*    height: 3em;*/
+	/*    overflow: hidden;*/
+	/*    position: absolute;*/
+	/*    right: 0;*/
+	/*    text-align: center;*/
+	/*    text-indent: 4em;*/
+	/*    width: 4em;*/
+	/*}*/
+
+	/*.btn-close:hover {*/
+	/*    opacity: 1;*/
+	/*}*/
+
+	/* 弹窗主体内容区域样式 */
+	.modal-body {
+		position: relative;
+		flex: 1 1 auto;
+		padding: 1rem;
+	}
+
+	/* ft3内部div样式 */
+	.ft3 > div {
+		width: 300px;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+
+	.ft3 > div h4 {
+		margin-bottom: 0.5rem;
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+
+	.ft3 > div img {
+		width: 200px;
+		height: auto;
+		border-radius: 5px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	}
+
+	/* 弹窗底部样式 */
+	.modal-footer {
+		margin: 0 1em 0 1em;
+		display: flex;
+		justify-content: center;
+		padding: 1rem;
+		border-top: 1px solid #dee2e6;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	/* 关闭弹窗按钮样式 */
+	.btn-secondary {
+		color: #fff;
+		background-color: #4c5c96;
+		border: 1px solid #dee2e6;
+		border-radius: 0.25rem;
+		padding: 0.375rem 0.75rem;
+		line-height: 1.5em;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: color 0.15s ease - in - out, background - color 0.15s ease - in - out, border - color 0.15s ease - in - out;
+	}
+
+	.btn-secondary:hover {
+		color: #4c5c96;
+		background-color: darkgray;
+		border: 1px solid #dee2e6;
+	}
+
+	.label{
+		display: none;
 	}
 </style>
 
-<!--<section id="footer">-->
-<!--	<div class="inner">-->
-<!--		<h2 class="major">联系我们</h2>-->
-
-<!--		<div class="ftCo">-->
-<!--			<div class="ft1">-->
-<!--				<ul class="contact">-->
-<!--					<li class="icon solid fa-home">北京市 昌平区<br>华北电力大学<br>主楼E座8层</li>-->
-<!--					<li class="icon solid fa-envelope">wuhua@ncepu.edu.cn</li>-->
-<!--				</ul></div>-->
-
-<!--			<div class="ft2">-->
-<!--				<div style="height:30px"	></div>-->
-<!--				<img src="images/school.png" alt="" />-->
-<!--			</div><div class="ft2">-->
-<!--			<div style="height:30px"	></div>-->
-<!--			<img src="images/logo.png" alt="" />-->
-<!--		</div>-->
-
-<!--			<div class="ft3">-->
-<!--				<div>-->
-<!--					<h4>请扫描企业微信</h4><img src="images/weixin.png" alt="" style="width: 125px"/>-->
-<!--				</div>-->
-<!--				<div class="div1">-->
-<!--					<h4>请填写报名表单</h4><img src="images/bmb.jpg" alt="" style="width: 125px"/>-->
-<!--				</div>-->
-<!--			</div>-->
+<style>
 
 
-
-<!--		</div>-->
-<!--		<ul class="copyright">-->
-<!--			<li>&copy; 2024 AMaze. All rights reserved.</li>-->
-<!--			&lt;!&ndash;<li>Design: <a href="http://html5up.net">HTML5 UP</a></li> &ndash;&gt;-->
-<!--		</ul>-->
-
-<!--	</div>-->
-<!--</section>-->
-
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <section id="footer">
-<div class="footer">
+	<div class="footer">
+		<div class="container">
+			<hr>
+			<div class="footer-info slideanim">
+				<div class="col-md-3 footer-info-grid links">
+					<h4>首页</h4>
+					<p><a href="introduction.html">团队成员</a></p>
+					<p><a href="open_source.html">开源协同</a></p>
+					<p><a href="scientific_research.html">科学研究</a></p>
+					<p><a href="innovation.html">产学创新</a></p>
+					<p><a href="index.html#three1">行业标准</a></p>
+					<p><a href="index.html#four1">生态合作</a></p>
+					<p><a href="#footer">联系我们</a></p>
+				</div>
 
-	<div class="container">
-		<h2 class="major">联系我们</h2>
-		<div class="footer-info slideanim">
-			<div class="col-md-3 footer-info-grid links">
-				<h4>快速跳转链接</h4>
-				<ul>
-					<li><a href="#banner">首页</a></li>
-					<li><a href="#one">团队成员</a></li>
-					<li><a href="#two">开源协同</a></li>
-					<li><a href="#three">科学研究</a></li>
-					<li><a href="#two1">产学创新</a></li>
-					<li><a href="#three1">行业标准</a></li>
-					<li><a href="#four1">生态合作</a></li>
-					<li><a href="#footer">联系我们</a></li>
+				<div class="col-md-3 footer-info-grid links">
+					<h4>团队介绍</h4>
+					<p><a href="introduction.html#intro">团队简介</a></p>
+					<p><a href="introduction.html#gaikuang">团队概况</a></p>
+					<p><a href="introduction.html#workers">团队成员</a></p>
+				</div>
+
+				<div class="col-md-3 footer-info-grid links">
+					<h4>开源协同</h4>
+					<p><a href="open_source.html#project">开源项目</a></p>
+					<p><a href="open_source.html#wurenji">开源文档</a></p>
+				</div>
+
+
+				<div class="col-md-3 footer-info-grid links">
+					<h4>科学研究</h4>
+					<p><a href="scientific_research.html#environment">实验室环境</a></p>
+					<p><a href="scientific_research.html#essay">论文</a></p>
+					<p><a href="scientific_research.html#activity">学术活动</a></p>
+					<p><a href="scientific_research.html#zhineng">智能装备</a></p>
+				</div>
+
+				<div class="col-md-3 footer-info-grid links">
+					<h4>产学创新</h4>
+					<p><a href="innovation.html#innovation">行业创新</a></p>
+					<p><a href="innovation.html#zhuanli">团队专利</a></p>
+					<p><a href="innovation.html#student">学生创新</a></p>
+				</div>
+
+
+				<div class="col-md-3 footer-info-grid address">
+					<h4>加入我们</h4>
+					<p>地址：北京市 昌平区</p>
+					<p>华北电力大学主楼E座8层</p>
+					<p> <a href="#" data-bs-toggle="modal" data-bs-target="#qywx" class="popup-trigger">点击添加企业微信</a></p>
+					<p> <a href="#" data-bs-toggle="modal" data-bs-target="#bmb" class="popup-trigger">点击填写报名表单</a></p>
+					<!--                            <img src="images/school.png" alt="" style="margin-left: 3em;margin-top: 3em;width: 4em"/>-->
+					<!--                            <img src="images/logo.png" alt="" style="margin-left: 3em;margin-top: 3em;width: 4em"/>-->
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="social-icons">
+				<ul class="social slideanim" id="follow">
+					<li class="icon solid fa-envelope"><a href="mailto:mail@example.com"></a></li>
+					<li class="icon brands fa-github"><a href="https://github.com/amazerobot"><span class="label">Github</span></a></li>
+					<li class="iconfont icon-zhihu"><a href="https://www.zhihu.com/people/amazecool"><span class="label">zhihu</span></a></li>
+					<li class="iconfont icon-weixin"><a href="#" data-bs-toggle="modal" data-bs-target="#gzh" class="popup-trigger"></a></li>
+					<li class="iconfont icon-douyin"><a href="#"></a></li>
+					<li class="iconfont icon-bilibili"><a href="https://space.bilibili.com/163982377"></a></li>
 				</ul>
 			</div>
-			<div class="col-md-3 footer-info-grid address">
-				<h4>地址:</h4>
-				<address>
-					<ul>
-                        <li>北京市 昌平区</li>
-                        <li>华北电力大学主楼E座8层</li>
-                        <li>电话 : 11111111111</li>
-                        <li>Email : <a class="mail" href="mailto:mail@example.com">wuhua@ncepu.edu.cn</a></li>
-                    </ul>
-					<img src="images/school.png" alt="" style="margin-left: 3em;margin-top: 3em;width: 4em"/>
-					<img src="images/logo.png" alt="" style="margin-left: 3em;margin-top: 3em;width: 4em"/>
-
-				</address>
+			<div class="copyright">
+				<p>&copy; 2024 AMaze. All rights reserved.<a href="http://w3layouts.com/"> AMaze </a></p>
 			</div>
 
-			<div class="col-md-3 footer-info-grid email">
-				<div class="ft3">
-					<div>
-						<h4>企业微信</h4><img src="images/weixin.png" alt="" style="width: 125px"/>
-					</div>
-					<div class="div1">
-						<h4>报名表单</h4><img src="images/bmb.jpg" alt="" style="width: 125px"/>
+		</div>
+	</div>
+</section>
+<div >
+
+	<div class="modal fade" id="qywx" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!--                <div class="modal-header">-->
+				<!--                    <h5 class="modal-title" id="exampleModalLabel">企业微信</h5>-->
+				<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+				<!--                </div>-->
+				<div class="modal-body">
+					<div class="ft3">
+						<div>
+							<h4>企业微信</h4><img src="images/weixin.png" alt=""/>
+						</div>
+
 					</div>
 				</div>
+				<div class="modal-footer">
+					<button type="5" class="btn-secondary" data-bs-dismiss="modal">关闭弹窗</button>
+				</div>
 			</div>
-			<div class="clearfix"></div>
-		</div>
-
-		<div class="social-icons">
-			<ul class="social slideanim" id="follow">
-				<li class="icon solid fa-phone"></li>
-				<li class="icon solid fa-envelope"><a href="#"></a></li>
-				<li class="icon brands fa-twitter"><a href="#"></a></li>
-				<li class="icon brands fa-facebook-f"><a href="#"></a></li>
-				<li class="icon brands fa-instagram"><a href="#"></a></li>
-			</ul>
-		</div>
-		<div class="copyright">
-			<p>&copy; 2024 AMaze. All rights reserved.<a href="http://w3layouts.com/"> AMaze </a></p>
 		</div>
 	</div>
 </div>
-</section>
+
+<div class="modal fade" id="bmb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!--                <div class="modal-header">-->
+			<!--                    <h5 class="modal-title" id="exampleModalLabel">企业微信</h5>-->
+			<!--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+			<!--                </div>-->
+			<div class="modal-body">
+				<div class="ft3">
+					<div>
+						<h4>报名表单</h4><img src="images/bmb.jpg" alt=""/>
+					</div>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="5" class="btn-secondary" data-bs-dismiss="modal">关闭弹窗</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="modal fade" id="gzh" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="ft3">
+					<div>
+						<h4>报名表单</h4><img src="images/gzh.jpg" alt=""/>
+					</div>
+
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="5" class="btn-secondary" data-bs-dismiss="modal">关闭弹窗</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>

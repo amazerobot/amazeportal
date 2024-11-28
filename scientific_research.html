@@ -24,6 +24,44 @@
 			scroll-margin-top: 30vh;
 			transition: all 0.5s ease-in-out;
 		}
+		.button.small:hover{
+			 background: #4c5c96;
+		 }
+
+		.truncate-container {
+			width: 200px; /* 设置文本容器宽度，间接控制文本长度 */
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			position: relative;
+		}
+
+		.read-more-checkbox {
+			display: none;
+		}
+
+		.read-more-label {
+			cursor: pointer;
+			color: blue;
+			text-decoration: underline;
+		}
+
+		.truncate-container.full-text {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			white-space: normal;
+		}
+
+		.read-more-checkbox:checked ~.truncate-container.full-text {
+			display: block;
+		}
+		.truncate-text{
+			overflow: hidden;
+
+		}
 	</style>
 </head>
 
@@ -34,10 +72,13 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1><a href="index.html">电力智能机器人工程技术研究中心|AMaze</a></h1>
-			<nav>
-				<a href="#menu">菜单</a>
-			</nav>
+			<div style="display: flex;align-items: center">
+				<img src="images/logo.png" style="width: 1em;height:1em; margin-right: 2em">
+				<h1><a href="index.html">电力智能机器人工程技术研究中心|AMaze</a></h1>
+				<nav>
+					<a href="#menu">菜单</a>
+				</nav>
+			</div>
 		</header>
 
 		<!-- Menu -->
@@ -50,7 +91,7 @@
 					<li><a href="open_source.html">开源协同</a></li>
 					<li><a href="scientific_research.html">科学研究</a></li>
 					<li><a href="innovation.html">产学创新</a></li>
-					<li><a href="index.html#three1">行业标准</a></li>
+					<li><a href="standard.html">行业标准</a></li>
 					<li><a href="index.html#four1">生态合作</a></li>
 					<li><a href="#footer">联系我们</a></li>
 				</ul>
@@ -115,6 +156,7 @@
 						<article>
 							<a href="#" class="image"><img src="images/location.jpg" alt="" /></a>
 							<h3 class="major">精度受限的无人机自主导航式室内定位系统</h3>
+						</article>
 
 					</section>
 
@@ -126,11 +168,13 @@
 									href="https://www.researchgate.net/publication/327735232_Viewpoint_Optimization_Method_for_Flying_Robot_Inspecting_Transmission_Towers_Based_on_Point_Cloud_Model"><strong>Viewpoint
 										Optimization Method for Flying Robot Inspecting Transmission Towers Based on
 										Point Cloud Model</strong></a>
-								<p>This paper presents a method to derive optimal viewpoints for flying robot based
-									transmission tower inspection, which applies point cloud model. A safe envelope is
-									established according to safe transmission tower inspection rules. Essential
-									inspection factors are proposed to evaluate the quality of candidate viewpoints,
-									which includes visibility, d...</p>
+										<p class="truncate-text">TThis paper presents a method to derive optimal viewpoints for flying robot based transmission tower inspection, which applies point cloud model. A safe envelope is established according to safe transmission tower inspection rules. Essential inspection factors are proposed to evaluate the quality of candidate viewpoints, which includes visibility, dimensionality feature of point cloud as well as the distance between viewpoint and transmission power. A score function is constructed to quantify candidate viewpoints, while multiple attribute decision theory is applied to calculate the weight of each factor. Particle swarm optimization (PSO) is used to find the optimal viewpoints set. Both simulation experiment and practical observations are carried out. The results prove that optimal viewpoints have a great contribution for accurate transmission tower inspection. Final results are compared to patch-based method and proved to be feasible.</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/327735232_Viewpoint_Optimization_Method_for_Flying_Robot_Inspecting_Transmission_Towers_Based_on_Point_Cloud_Model" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper3.jpg" alt="" />
@@ -144,11 +188,13 @@
 									href="https://www.researchgate.net/publication/309045605_Fast_Robot_Localization_Approach_Based_on_Manifold_Regularization_with_Sparse_Area_Features"><strong>Fast
 										Robot Localization Approach Based on Manifold Regularization with Sparse Area
 										Features</strong></a>
-								<p>Background/Introduction Robot localization can be considered as a cognition process
-									that takes place during a robot estimating metric coordinates with vision. It
-									provides a natural method for revealing the true autonomy of robots. In this paper,
-									a kernel principal component analysis (PCA)-regularized least-square algorithm for
-									robot localization wi...</p>
+								<p class="truncate-text">Background/Introduction Robot localization can be considered as a cognition process that takes place during a robot estimating metric coordinates with vision. It provides a natural method for revealing the true autonomy of robots. In this paper, a kernel principal component analysis (PCA)-regularized least-square algorithm for robot localization with uncalibrated monocular visual information is presented. Our system is the first to use a manifold regularization strategy in robot localization, which achieves real-time localization using a harmonic function. Methods The core idea is to incorporate labelled and unlabelled observation data in offline training to generate a regression model smoothed by the intrinsic manifold embedded in area feature vectors. The harmonic function is employed to solve the online localization of new observations. Our key contributions include semi-supervised learning techniques for robot localization, the discovery and use of the visual manifold learned by kernel PCA and some solutions for simultaneous parameter selection. This simultaneous localization and mapping (SLAM) system combines dimension reduction methods, manifold regularization techniques and parameter selection to provide a paradigm of SLAM having self-contained theoretical foundations. Results and Conclusions In extensive experiments, we evaluate the localization errors from the perspective of reducing implementation and application difficulties in feature selection and magnitude ratio determination of labelled and unlabelled data. Then, a nonlinear optimization algorithm is adopted for simultaneous parameter selection. Our online localization algorithm outperformed the state-of-the-art appearance-based SLAM algorithms at a processing rate of 30 Hz for new data on a standard PC with a camera.</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/309045605_Fast_Robot_Localization_Approach_Based_on_Manifold_Regularization_with_Sparse_Area_Features" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper1.png" alt="" /><br>
@@ -162,11 +208,13 @@
 								<a
 									href="https://www.researchgate.net/publication/301644658_A_3D_Laboratory_Test-Platform_for_Overhead_Power_Line_Inspection"><strong>A
 										3D Laboratory Test-Platform for Overhead Power Line Inspection</strong></a>
-								<p>Using unmanned aerial vehicles (UAVs) for performing automatic inspection of overhead
-									power lines instead of foot patrols is an attractive option, since doing so is safer
-									and have considerable cost savings, among other advantages. The purpose of this
-									paper is to design a 3D laboratory test-platform to simulate UAVs' inspection of
-									transmission lines...</p>
+								<p class="truncate-text">Using unmanned aerial vehicles (UAVs) for performing automatic inspection of overhead power lines instead of foot patrols is an attractive option, since doing so is safer and have considerable cost savings, among other advantages. The purpose of this paper is to design a 3D laboratory test-platform to simulate UAVs' inspection of transmission lines and secondly, proposing an automated inspection strategy for UAVs in order to follow transmission lines. The construction and system architecture of our 3D test-platform is described in this paper. The inspection strategy contributes to knowledge pertaining to an automated inspection procedure and includes two steps: flight path planning for UAVs and visual tracking of the transmission lines. The 3D laboratory test-platform is applied to test the performance of the proposed strategy and the tracking results of our inspection strategy are subsequently presented. The availability of the 3D laboratory test-platform and the efficiency of our tracking algorithm are verified by experiments.</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/301644658_A_3D_Laboratory_Test-Platform_for_Overhead_Power_Line_Inspection" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper2.png" alt="" /><br>
@@ -180,11 +228,13 @@
 									href="https://www.researchgate.net/publication/292176841_Undelayed_Initialization_Using_Dual_Channel_Vision_for_Ego-Motion_in_Power_Line_Inspection"><strong>Undelayed
 										Initialization Using Dual Channel Vision for Ego-Motion in Power Line
 										Inspection</strong></a>
-								<p>This paper presents a novel approach to the initialization of an ego-motion
-									estimation technique for autonomous power line inspection. Dual channel vision,
-									consisting of an infrared and optical camera, is typically adopted during
-									inspection. The infrared camera is far more proficient at reliably detecting heated
-									regions of the power tower which can...</p>
+								<p class="truncate-text">This paper presents a novel approach to the initialization of an ego-motion estimation technique for autonomous power line inspection. Dual channel vision, consisting of an infrared and optical camera, is typically adopted during inspection. The infrared camera is far more proficient at reliably detecting heated regions of the power tower which can be regarded as a prior relationship between the tower and cameras. Using the infrared camera, which is equipped parallel to the optical camera, an incomplete correspondence between the optical image and a 3D CAD model is established. Depending on the degree of correspondence, the initial pose of the CAD model in the optical image is estimated through two stages of coarse-to-fine estimation. The primary contributions of this paper include: 1) using dual vision for partial initialization; 2) incorporating two-stage algorithms to estimate an accurate pose quickly; 3) implementing an algorithm which functions correctly regardless of the motion blur or background texture. Experimental results consistently show that the initial pose can be estimated efficiently and robustly</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/292176841_Undelayed_Initialization_Using_Dual_Channel_Vision_for_Ego-Motion_in_Power_Line_Inspection" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper5.png" alt="" /><br>
@@ -198,11 +248,13 @@
 									href="https://www.researchgate.net/publication/286510425_Hybrid_velocity_switching_and_fuzzy_logic_control_scheme_for_cable_tunnel_inspection_robot"><strong>Hybrid
 										velocity switching and fuzzy logic control scheme for cable tunnel inspection
 										robot</strong></a>
-								<p>The mass and stiffness of cantilever are neglected; thus, the robot and load can be
-									considered as point masses and are assumed to move in a two-dimensional, x-y plane.
-									The coordinates of the trolley and load are (x M , y M ) and (x m , y m ).
-									Triangular membership functions are chosen for the derivative of the robot position
-									error, swing angle, the...</p>
+								<p class="truncate-text">The mass and stiffness of cantilever are neglected; thus, the robot and load can be considered as point masses and are assumed to move in a two-dimensional, x-y plane. The coordinates of the trolley and load are (x M , y M ) and (x m , y m ). Triangular membership functions are chosen for the derivative of the robot position error, swing angle, the derivative of the swing angle and force input. A normalized universe of discourse is used for the three inputs and one output of the fuzzy logic controller. Scaling factors k 1, k 2 and k 3 are chosen to convert the three inputs of the system and activate the rule base effectively, while k 4 is selected to activate the system to generate the desired output. To simplify a rule base, the derivative of robot position error, swing angle, the derivative of swing angle and force are partitioned into five primary fuzzy sets as follows:</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/286510425_Hybrid_velocity_switching_and_fuzzy_logic_control_scheme_for_cable_tunnel_inspection_robot" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper4.jpg" alt="" />
@@ -216,11 +268,13 @@
 								<a
 									href="https://www.researchgate.net/publication/283227524_Visual_Data_Driven_Approach_for_Metric_Localization_in_Substation"><strong>Visual
 										Data Driven Approach for Metric Localization in Substation</strong></a>
-								<p>To localize inspection robot in an in-service substation costs much. How to
-									discriminate its location among highly similar scenes is the main problem of
-									localizing robot in the substation using vision. A novel approach for visual
-									localization using image retrieval and multi-view geometry is proposed. It is
-									applicable for autonomous inspection of in...</p>
+								<p class="truncate-text">To localize inspection robot in an in-service substation costs much. How to discriminate its location among highly similar scenes is the main problem of localizing robot in the substation using vision. A novel approach for visual localization using image retrieval and multi-view geometry is proposed. It is applicable for autonomous inspection of in-service substation without additional modifications of the environment. The experimental results demonstrate the efficiency and reliability of our approach. They have been further discussed by means of parameters for image description, number of neighbouring images for coordinates estimation, training dataset selection and performance evaluation. They verified that our approach is a cost-effective solution to robot localization in in-service substation.</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/283227524_Visual_Data_Driven_Approach_for_Metric_Localization_in_Substation" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper6.jpg" alt="" />
@@ -234,11 +288,13 @@
 								<a
 									href="https://www.researchgate.net/publication/282449521_A_Safe_Flight_Approach_of_the_UAV_in_the_Electrical_Line_Inspection"><strong>A
 										Safe Flight Approach of the UAV in the Electrical Line Inspection</strong></a>
-								<p>In recent years, the UAV (Unmanned Aerial Vehicle) inspection for the electrical line
-									has received increasing attentions due to the advantages of low costs, easiness to
-									control and flexibility. The UAV can inspect the electrical tower independently and
-									automatically by planning the flight path. But during the inspection along the path,
-									the UAV is e...</p>
+								<p class="truncate-text">In recent years, the UAV (Unmanned Aerial Vehicle) inspection for the electrical line has received increasing attentions due to the advantages of low costs, easiness to control and flexibility. The UAV can inspect the electrical tower independently and automatically by planning the flight path. But during the inspection along the path, the UAV is easily impacted by gust wind due to its light weight and small size, which always leads to the crash into the electrical tower. Thus, in this paper, a safe flight approach (SFA) is proposed to make the flight be safer during the inspection. The main contributions include: firstly, the piecewise linear interpolation method is proposed to fit the distribution curve of the electrical towers based on the GPS coordinates of the electrical towers; secondly, the no-fly zone on the both sides of the distribution curve are created, and a security distance formula (SDF) is raised to decide the width of the no-fly zone; thirdly, a gust wind formula (GWF) is proposed to improve the artificial potential field approach, which can contribute to the path planning of the UAV; finally, a flight path of the UAV can be planned using the SFA to make the UAV avoid colliding with the electric tower. The proposed approach is tested on the experiment to demonstrate its effectiveness.</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/282449521_A_Safe_Flight_Approach_of_the_UAV_in_the_Electrical_Line_Inspection" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper7.jpg" alt="" />
@@ -253,8 +309,14 @@
 									href="https://www.researchgate.net/publication/330494229_A_Novel_Hybrid_Path_Planning_Algorithm_at_Macroscopic_Level_for_Autonomous_Climbing_Robot"><strong>A
 										Novel Hybrid Path Planning Algorithm at Macroscopic Level for Autonomous
 										Climbing Robot</strong></a>
-								<p>Conference: 2018 3rd International Conference on Robotics and Automation Engineering
-									(ICRAE)</p>
+								<p class="truncate-text">Conference: 2018 3rd International Conference on Robotics and Automation Engineering
+									(ICRAE)</p><ul class="actions small">
+								<li><a href="https://www.researchgate.net/publication/330494229_A_Novel_Hybrid_Path_Planning_Algorithm_at_Macroscopic_Level_for_Autonomous_Climbing_Robot" class="button small">PDF</a></li>
+								<li><a href="#" class="button small">PAPER</a></li>
+								<li><a href="#" class="button small">Cite</a></li>
+								<li><a href="#" class="button small">Project</a></li>
+							</ul>
+
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper8.jpg" alt="" />
@@ -269,11 +331,13 @@
 									href="https://www.researchgate.net/publication/326214067_A_Hierarchical_Algorithm_Based_on_Density_Peaks_Clustering_and_Ant_Colony_Optimization_for_Traveling_Salesman_Problem"><strong>A
 										Hierarchical Algorithm Based on Density Peaks Clustering and Ant Colony
 										Optimization for Traveling Salesman Problem</strong></a>
-								<p>This paper proposed a hierarchical hybrid algorithm for Traveling Salesman Problem
-									(TSP) according to the idea of divide-and-conquer. The TSP problem is decomposed
-									into a few subproblems with small-scale nodes by Density Peaks Clustering algorithm
-									(DPC). Every subproblem is resolved by Ant Colony Optimization algorithm (ACO), this
-									is the lower laye...</p>
+								<p class="truncate-text">This paper proposed a hierarchical hybrid algorithm for Traveling Salesman Problem (TSP) according to the idea of divide-and-conquer. The TSP problem is decomposed into a few subproblems with small-scale nodes by Density Peaks Clustering algorithm (DPC). Every subproblem is resolved by Ant Colony Optimization algorithm (ACO), this is the lower layer. The center nodes of all subproblems constitute a new TSP problem, which forms the upper layer. All local tours of these subproblems are joined to generate the initial global tour in the same order that the center nodes are traversed in the upper layer TSP problem. Finally, the global tour is optimized by k-Opt algorithms. Thirty benchmark instances taken from TSPLIB are divided into three groups on the basis of problem size: small-scale, large-scale, and very large-scale. Experimental result shows that the proposed algorithm can obtain the solutions with higher accuracy and stronger robustness, and significantly reduce runtime, especially for the very large-scale TSP problem.</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/326214067_A_Hierarchical_Algorithm_Based_on_Density_Peaks_Clustering_and_Ant_Colony_Optimization_for_Traveling_Salesman_Problem" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper9.jpg" alt="" />
@@ -287,8 +351,14 @@
 								<a
 									href="https://www.researchgate.net/publication/320653473_Failure_recovery_method_based_on_log_for_autonomous_robotic_system"><strong>Failure
 										recovery method based on log for autonomous robotic system</strong></a>
-								<p>Conference: 2017 International Conference on Robotics and Automation Sciences (ICRAS)
+								<p class="truncate-text">Conference: 2017 International Conference on Robotics and Automation Sciences (ICRAS)
 								</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/320653473_Failure_recovery_method_based_on_log_for_autonomous_robotic_system" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper10.jpg" alt="" />
@@ -303,8 +373,14 @@
 									href="https://www.researchgate.net/publication/320650651_Hierarchical_detecting_points_path_planning_algorithm_for_climbing_robot_in_spatial_trusses"><strong>Hierarchical
 										detecting points path planning algorithm for climbing robot in spatial
 										trusses</strong></a>
-								<p>Conference: 2017 International Conference on Robotics and Automation Sciences (ICRAS)
+								<p class="truncate-text">Conference: 2017 International Conference on Robotics and Automation Sciences (ICRAS)
 								</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/320650651_Hierarchical_detecting_points_path_planning_algorithm_for_climbing_robot_in_spatial_trusses" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper12.jpg" alt="" />
@@ -318,11 +394,13 @@
 								<a
 									href="https://www.researchgate.net/publication/318574933_Improving_SPH_Fluid_Simulation_Using_Position_Based_Dynamics"><strong>Improving
 										SPH Fluid Simulation Using Position Based Dynamics</strong></a>
-								<p>Physically-based simulation technique has been widely used in creating astounding
-									fluid appearances for film industries and computer games. However, stable and
-									realistic fluid simulation based on SPH method is still challenging, as unstable
-									solid boundary handling and numerical dissipation always plague current SPH fluid
-									solvers. To solve these iss...</p>
+								<p class="truncate-text">Physically-based simulation technique has been widely used in creating astounding fluid appearances for film industries and computer games. However, stable and realistic fluid simulation based on SPH method is still challenging, as unstable solid boundary handling and numerical dissipation always plague current SPH fluid solvers. To solve these issues, we present a new method for improving SPH fluid simulation using position based dynamics (PBD). For the stable fluid-solid interaction, by combining the position constraint solved by PBD and the relative contribution of solid boundary particles, we significantly alleviate the penetration issues at fluid-solid interfaces. And in order to stably simulate turbulence diffusion of SPH fluids, we enforce a novel nonlinear vorticity constraint on each fluid particle, and then solve it using PBD to smooth the vorticity field. The implementation results demonstrate that our method significantly improves SPH method for simulating realistic and stable animations of fluid phenomena.</p><ul class="actions small">
+								<li><a href="https://www.researchgate.net/publication/318574933_Improving_SPH_Fluid_Simulation_Using_Position_Based_Dynamics" class="button small">PDF</a></li>
+								<li><a href="#" class="button small">PAPER</a></li>
+								<li><a href="#" class="button small">Cite</a></li>
+								<li><a href="#" class="button small">Project</a></li>
+							</ul>
+
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper11.jpg" alt="" />
@@ -336,7 +414,13 @@
 								<a
 									href="https://www.researchgate.net/publication/339266909_Research_on_Key_Technologies_of_Cable_Tunnel_Inspection_Robot"><strong>Research
 										on Key Technologies of Cable Tunnel Inspection Robot</strong></a>
-								<p>2019 Chinese Automation Congress (CAC)</p>
+								<p class="truncate-text">2019 Chinese Automation Congress (CAC)</p><ul class="actions small">
+								<li><a href="https://www.researchgate.net/publication/339266909_Research_on_Key_Technologies_of_Cable_Tunnel_Inspection_Robot" class="button small">PDF</a></li>
+								<li><a href="#" class="button small">PAPER</a></li>
+								<li><a href="#" class="button small">Cite</a></li>
+								<li><a href="#" class="button small">Project</a></li>
+							</ul>
+
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper13.jpg" alt="" />
@@ -350,7 +434,13 @@
 								<a
 									href="https://www.researchgate.net/publication/331418567_A_Deep_Convolutional_Networks_for_Monocular_Road_Segmentation"><strong>A
 										Deep Convolutional Networks for Monocular Road Segmentation</strong></a>
-								<p>2018 Chinese Automation Congress (CAC)</p>
+								<p class="truncate-text">2018 Chinese Automation Congress (CAC)</p>
+								<ul class="actions small">
+									<li><a href="https://www.researchgate.net/publication/331418567_A_Deep_Convolutional_Networks_for_Monocular_Road_Segmentation" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper14.jpg" alt="" />
@@ -364,11 +454,14 @@
 								<a href="https://link.springer.com/article/10.1007/s13042-023-01974-8"><strong>Contrastive
 										sequential interaction network learning on co-evolving Riemannian spaces
 									</strong></a>
-								<p>In this paper, we for the first time study the sequential interaction network
-									learning on co-evolving Riemannian manifolds, and present a novel CSINCERE.
-									Concretely, we first introduce a co-evolving GNN with two-stereographic space
-									bridged by the common Euclidean tangent space, in which we formulate the
-									cross-space...</p>
+								<p class="truncate-text">The sequential interaction network usually find itself in a variety of applications, e.g., recommender system. Herein, inferring future interaction is of fundamental importance, and previous efforts are mainly focused on the dynamics in the classic zero-curvature Euclidean space. Despite the promising results achieved by previous methods, a range of significant issues still largely remains open: On the bipartite nature, is it appropriate to place user and item nodes in one identical space regardless of their inherent difference? On the network dynamics, instead of a fixed curvature space, will the representation spaces evolve when new interactions arrive continuously? On the learning paradigm, can we get rid of the label information costly to acquire? To address the aforementioned issues, we propose a novel Contrastive model for Sequential Interaction Network learning on Co-Evolving RiEmannian spaces, CSincere. To the best of our knowledge, we are the first to introduce a couple of co-evolving representation spaces, rather than a single or static space, and propose a co-contrastive learning for the sequential interaction network. In CSincere, we formulate a Cross-Space Aggregation for message-passing across representation spaces of different Riemannian geometries, and design a Neural Curvature Estimator based on Ricci curvatures for modeling the space evolvement over time. Thereafter, we present a Reweighed Co-Contrast between the temporal views of the sequential network, so that the couple of Riemannian spaces interact with each other for the interaction prediction without labels. Empirical results on 5 public datasets show the superiority of CSincere over the state-of-the-art methods./p>
+								<ul class="actions small">
+								<li><a href="https://link.springer.com/article/10.1007/s13042-023-01974-8" class="button small">PDF</a></li>
+								<li><a href="#" class="button small">PAPER</a></li>
+								<li><a href="#" class="button small">Cite</a></li>
+								<li><a href="#" class="button small">Project</a></li>
+							</ul>
+
 							</div>
 							<div class="col-4 col-12-medium" style="display:flex;justify-content: center;align-items: center">
 								<img src="images/paper15.jpg" alt="" width="100%" height="60%" />
@@ -381,11 +474,14 @@
 							<div class="col-8 col-12-medium">
 								<a href="https://arxiv.org/abs/2203.08566"><strong>Edge Detection with
 										Transformer</strong></a>
-								<p>Convolutional neural networks have made significant progresses in edge detection by
-									progressively exploring the context and semantic features. However, local details
-									are gradually suppressed with the enlarging of receptive fields. Recently, vision
-									transformer has shown excellent capability in capturing long-range dependencies.
-									Inspired by this, we propose a novel ...</p>
+								<p class="truncate-text">Convolutional neural networks have made significant progresses in edge detection by progressively exploring the context and semantic features. However, local details are gradually suppressed with the enlarging of receptive fields. Recently, vision transformer has shown excellent capability in capturing long-range dependencies. Inspired by this, we propose a novel transformer-based edge detector, \emph{Edge Detection TransformER (EDTER)}, to extract clear and crisp object boundaries and meaningful edges by exploiting the full image context information and detailed local cues simultaneously. EDTER works in two stages. In Stage I, a global transformer encoder is used to capture long-range global context on coarse-grained image patches. Then in Stage II, a local transformer encoder works on fine-grained patches to excavate the short-range local cues. Each transformer encoder is followed by an elaborately designed Bi-directional Multi-Level Aggregation decoder to achieve high-resolution features. Finally, the global context and local cues are combined by a Feature Fusion Module and fed into a decision head for edge prediction. Extensive experiments on BSDS500, NYUDv2, and Multicue demonstrate the superiority of EDTER in comparison with state-of-the-arts.</p>
+								<ul class="actions small">
+								<li><a href="https://arxiv.org/pdf/2203.08566" class="button small">PDF</a></li>
+								<li><a href="#" class="button small">PAPER</a></li>
+								<li><a href="#" class="button small">Cite</a></li>
+								<li><a href="#" class="button small">Project</a></li>
+							</ul>
+
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper16.jpg" alt="" width="100%" height="90%" />
@@ -399,11 +495,14 @@
 								<a href="https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cje.2018.05.005"><strong>Viewpoint
 										Optimization Method for Flying Robot Inspecting Transmission Towers Based on
 										Point Cloud Model </strong></a>
-								<p>This paper presents a method to derive optimal viewpoints for flying robot based
-									transmission tower inspection, which applies point cloud model. A safe envelope is
-									established according to safe transmission tower inspection rules. Essential
-									inspection factors are proposed to evaluate the quality of candidate viewpoints,
-									which includes visibility...</p>
+								<p class="truncate-text">This paper presents a method to derive optimal viewpoints for flying robot based transmission tower inspection, which applies point cloud model. A safe envelope is established according to safe transmission tower inspection rules. Essential inspection factors are proposed to evaluate the quality of candidate viewpoints, which includes visibility, dimensionality feature of point cloud as well as the distance between viewpoint and transmission power. A score function is constructed to quantify candidate viewpoints, while multiple attribute decision theory is applied to calculate the weight of each factor. Particle swarm optimization(PSO) is used to find the optimal viewpoints set. Both simulation experiment and practical observations are carried out. The results prove that optimal viewpoints have a great contribution for accurate transmission tower inspection. Final results are compared to patch-based method and proved to be feasible.</p>
+								<ul class="actions small">
+								<li><a href="https://ietresearch.onlinelibrary.wiley.com/doi/epdf/10.1049/cje.2018.05.005" class="button small">PDF</a></li>
+								<li><a href="#" class="button small">PAPER</a></li>
+								<li><a href="#" class="button small">Cite</a></li>
+								<li><a href="#" class="button small">Project</a></li>
+							</ul>
+
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper17.jpg" alt="" width="100%" height="90%" />
@@ -417,11 +516,17 @@
 								<a href="https://www.sciencedirect.com/science/article/pii/S0016236117303666"><strong>Multi-mode
 										combustion process monitoring on a pulverised fuel combustion test facility
 										based on flame imaging and random weight network techniques</strong></a>
-								<p>Combustion systems need to be operated under a range of different conditions to meet
+								<p class="truncate-text">Combustion systems need to be operated under a range of different conditions to meet
 									fluctuating energy demands. Reliable monitoring of the combustion process is crucial
 									for combustion control and optimisation under such variable conditions. In this
 									paper, a monitoring method for variable combustion conditions is proposed by
 									combining digital imaging...</p>
+								<ul class="actions small">
+									<li><a href="https://www.sciencedirect.com/science/article/pii/S0016236117303666" class="button small">PDF</a></li>
+									<li><a href="#" class="button small">PAPER</a></li>
+									<li><a href="#" class="button small">Cite</a></li>
+									<li><a href="#" class="button small">Project</a></li>
+								</ul>
 							</div>
 							<div class="col-4 col-12-medium">
 								<img src="images/paper18.jpg" alt="" width="100%" height="80%" />
@@ -436,9 +541,7 @@
 							<a href="https://link.springer.com/journal/13042/updates/26337314"><strong>
 									<li>Special Issues</li>
 								</strong></a>
-							<p>This special issue features original studies on pretraining, including fundamental and
-								cutting-edge theories and applications on language models, graphs/social networks,
-								computer vision, knowledge graphs, and recommender systems.</p>
+								<p class="truncate-text">Combustion systems need to be operated under a range of different conditions to meet fluctuating energy demands. Reliable monitoring of the combustion process is crucial for combustion control and optimisation under such variable conditions. In this paper, a monitoring method for variable combustion conditions is proposed by combining digital imaging, PCA-RWN (Principal Component Analysis and Random Weight Network) techniques. Based on flame images acquired using a digital imaging system, the mean intensity values of RGB (Red, Green, and Blue) image components and texture descriptors computed based on the grey-level co-occurrence matrix are used as the colour and texture features of flame images. These features are treated as the input variables of the proposed PCA-RWN model for multi-mode process monitoring. In the proposed model, the PCA is used to extract the principal component features of input vectors. By establishing the RWN model for an appropriate principal component subspace, the computing load of recognising combustion operation conditions is significantly reduced. In addition, Hotelling’s T2 and SPE (Squared Prediction Error) statistics of the corresponding operation conditions are calculated to identify the abnormalities of the combustion. The proposed approach is evaluated using flame image datasets obtained on the PACT 250 kW Air/Oxy-fuel Combustion Test Facility (PACT 250 kW Air/Oxy-fuel CTF). Variable operation conditions were achieved by changing the primary air and SA/TA (Secondary Air to Territory Air) splits. The results demonstrate that, for the operation conditions examined, the condition recognition success rate of the proposed PCA-RWN model is over 91%, which outperforms other machine learning classifiers with a reduced training time. The results also show that the abnormal conditions exhibit different oscillation frequencies from the normal conditions, and the T2 and SPE statistics are capable of detecting such abnormalities.</p>
 						</div>
 						<div class="col-8 col-12-medium">
 							<strong>
@@ -467,6 +570,9 @@
 		</section>
 		<!-- Footer -->
 		<style>
+			。read-more{
+				color: #3f4e85;
+			}
 			.footer {
 				background-color: transparent;
 				color: #ffffff;
@@ -474,7 +580,7 @@
 			}
 
 			.container {
-				max-width: 1200px;
+				max-width: 1250px;
 				margin: 0 auto;
 				padding: 0 15px;
 			}
@@ -488,50 +594,35 @@
 
 			.footer-info-grid {
 				flex: 1;
-				min-width: 250px;
+				min-width: 80px;
 				margin-bottom: 30px;
 			}
 
 			.footer-info h4 {
 				color: #ffffff;
-				font-size: 1.2em;
-				margin-bottom: 20px;
+				font-size: 1em;
+				margin-bottom: 10px;
 				font-weight: 600;
 			}
 
-			.footer-info ul {
-				list-style: none;
+			.footer-info p {
+				color: #a8b2bc;
 				padding: 0;
 				margin: 0;
+				font-size: 0.9em;
 			}
 
-			.footer-info ul li {
-				margin-bottom: 10px;
-			}
 
-			.footer-info ul li a {
+			.footer-info p a {
 				color: #a8b2bc;
 				text-decoration: none;
 				transition: color 0.3s ease;
 			}
 
-			.footer-info ul li a:hover {
+			.footer-info p a:hover {
 				color: #ffffff;
 			}
 
-			.ft3 {
-				display: flex;
-				justify-content: space-between;
-			}
-
-			.ft3 > div {
-				flex: 1;
-			}
-
-			.ft3 img {
-				max-width: 125px;
-				height: auto;
-			}
 
 			.social-icons {
 				text-align: center;
@@ -551,6 +642,18 @@
 				font-size: 24px;
 				color: #a8b2bc;
 				transition: color 0.3s ease;
+				position: relative;
+
+			}
+
+			.social-icons ul li a {
+				border-bottom: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: block;
 			}
 
 			.social-icons ul li:hover {
@@ -573,78 +676,242 @@
 				.footer-info-grid {
 					width: 100%;
 				}
+			}
 
-				.ft3 {
-					flex-direction: column;
-				}
+			/* 弹窗主体样式 */
+			.modal {
+				display: none;
+				/* 确保弹窗在页面中心显示 */
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 
-				.ft3 > div {
-					margin-bottom: 20px;
-				}
+				/* 自定义背景颜色和边框等外观 */
+				background-color: #4c5c96;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			}
+
+			/* 弹窗内部对话框样式 */
+			.modal-dialog {
+				max-width: 500px;
+				margin: 1.75rem auto;
+			}
+
+			/* 弹窗内容区域样式 */
+			.modal-content {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				pointer-events: all;
+				background-color: transparent;
+				background-clip: padding-box;
+				border: none;
+				border-radius: 5px;
+				outline: 0;
+			}
+			.modal-body {
+				position: relative;
+				flex: 1 1 auto;
+				padding: 1rem;
+			}
+
+			/* ft3内部div样式 */
+			.ft3 > div {
+				width: 300px;
+				height: 300px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1rem;
+			}
+
+			.ft3 > div h4 {
+				margin-bottom: 0.5rem;
+				font-size: 1.5rem;
+				font-weight: 500;
+			}
+
+			.ft3 > div img {
+				width: 200px;
+				height: auto;
+				border-radius: 5px;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+			}
+
+			/* 弹窗底部样式 */
+			.modal-footer {
+				margin: 0 1em 0 1em;
+				display: flex;
+				justify-content: center;
+				padding: 1rem;
+				border-top: 1px solid #dee2e6;
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+
+			/* 关闭弹窗按钮样式 */
+			.btn-secondary {
+				color: #fff;
+				background-color: #4c5c96;
+				border: 1px solid #dee2e6;
+				border-radius: 0.25rem;
+				padding: 0.375rem 0.75rem;
+				line-height: 1.5em;
+				font-size: 1rem;
+				cursor: pointer;
+				transition: color 0.15s ease - in - out, background - color 0.15s ease - in - out, border - color 0.15s ease - in - out;
+			}
+
+			.btn-secondary:hover {
+				color: #4c5c96;
+				background-color: darkgray;
+				border: 1px solid #dee2e6;
+			}
+
+			.label{
+				display: none;
 			}
 		</style>
+
+		<style>
+
+
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 		<section id="footer">
 			<div class="footer">
 				<div class="container">
-					<h2 class="major">联系我们</h2>
-
+					<hr>
 					<div class="footer-info slideanim">
 						<div class="col-md-3 footer-info-grid links">
-							<h4>快速跳转链接</h4>
-							<ul>
-								<li><a href="index.html">首页</a></li>
-								<li><a href="introduction.html">团队成员</a></li>
-								<li><a href="open_source.html">开源协同</a></li>
-								<li><a href="scientific_research.html">科学研究</a></li>
-								<li><a href="innovation.html">产学创新</a></li>
-								<li><a href="index.html#three1">行业标准</a></li>
-								<li><a href="index.html#four1">生态合作</a></li>
-								<li><a href="#footer">联系我们</a></li>
-							</ul>
+							<h4>首页</h4>
+							<p><a href="introduction.html">团队成员</a></p>
+							<p><a href="open_source.html">开源协同</a></p>
+							<p><a href="scientific_research.html">科学研究</a></p>
+							<p><a href="innovation.html">产学创新</a></p>
+							<p><a href="index.html#three1">行业标准</a></p>
+							<p><a href="index.html#four1">生态合作</a></p>
+							<p><a href="#footer">联系我们</a></p>
 						</div>
+
+						<div class="col-md-3 footer-info-grid links">
+							<h4>团队介绍</h4>
+							<p><a href="introduction.html#intro">团队简介</a></p>
+							<p><a href="introduction.html#gaikuang">团队概况</a></p>
+							<p><a href="introduction.html#workers">团队成员</a></p>
+						</div>
+
+						<div class="col-md-3 footer-info-grid links">
+							<h4>开源协同</h4>
+							<p><a href="open_source.html#project">开源项目</a></p>
+							<p><a href="open_source.html#wurenji">开源文档</a></p>
+						</div>
+
+
+						<div class="col-md-3 footer-info-grid links">
+							<h4>科学研究</h4>
+							<p><a href="scientific_research.html#environment">实验室环境</a></p>
+							<p><a href="scientific_research.html#essay">论文</a></p>
+							<p><a href="scientific_research.html#activity">学术活动</a></p>
+							<p><a href="scientific_research.html#zhineng">智能装备</a></p>
+						</div>
+
+						<div class="col-md-3 footer-info-grid links">
+							<h4>产学创新</h4>
+							<p><a href="innovation.html#innovation">行业创新</a></p>
+							<p><a href="innovation.html#zhuanli">团队专利</a></p>
+							<p><a href="innovation.html#student">学生创新</a></p>
+						</div>
+
+
 						<div class="col-md-3 footer-info-grid address">
-							<h4>地址:</h4>
-							<address>
-								<ul>
-									<li>北京市 昌平区</li>
-									<li>华北电力大学主楼E座8层</li>
-									<li>电话 : 11111111111</li>
-									<li>Email : <a class="mail" href="mailto:mail@example.com">wuhua@ncepu.edu.cn</a></li>
-								</ul>
-								<img src="images/school.png" alt="" style="margin-left: 3em;margin-top: 3em;width: 4em"/>
-								<img src="images/logo.png" alt="" style="margin-left: 3em;margin-top: 3em;width: 4em"/>
-
-							</address>
-						</div>
-
-						<div class="col-md-3 footer-info-grid email">
-							<div class="ft3">
-								<div>
-									<h4>企业微信</h4><img src="images/weixin.png" alt="" style="width: 125px"/>
-								</div>
-								<div class="div1">
-									<h4>报名表单</h4><img src="images/bmb.jpg" alt="" style="width: 125px"/>
-								</div>
-							</div>
+							<h4>加入我们</h4>
+							<p>地址：北京市 昌平区</p>
+							<p>华北电力大学主楼E座8层</p>
+							<p> <a href="#" data-bs-toggle="modal" data-bs-target="#qywx" class="popup-trigger">点击添加企业微信</a></p>
+							<p> <a href="#" data-bs-toggle="modal" data-bs-target="#bmb" class="popup-trigger">点击填写报名表单</a></p>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 
 					<div class="social-icons">
 						<ul class="social slideanim" id="follow">
-							<li class="icon solid fa-phone"></li>
-							<li class="icon solid fa-envelope"><a href="#"></a></li>
-							<li class="icon brands fa-twitter"><a href="#"></a></li>
-							<li class="icon brands fa-facebook-f"><a href="#"></a></li>
-							<li class="icon brands fa-instagram"><a href="#"></a></li>
+							<li class="icon solid fa-envelope"><a href="mailto:mail@example.com"></a></li>
+							<li class="icon brands fa-github"><a href="https://github.com/amazerobot"><span class="label">Github</span></a></li>
+							<li class="iconfont icon-zhihu"><a href="https://www.zhihu.com/people/amazecool"><span class="label">zhihu</span></a></li>
+							<li class="iconfont icon-weixin"><a href="#" data-bs-toggle="modal" data-bs-target="#gzh" class="popup-trigger"></a></li>
+							<li class="iconfont icon-douyin"><a href="#"></a></li>
+							<li class="iconfont icon-bilibili"><a href="https://space.bilibili.com/163982377"></a></li>
 						</ul>
 					</div>
 					<div class="copyright">
 						<p>&copy; 2024 AMaze. All rights reserved.<a href="http://w3layouts.com/"> AMaze </a></p>
 					</div>
+
 				</div>
 			</div>
 		</section>
+		<div>
+
+			<div class="modal fade" id="qywx" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="ft3">
+								<div>
+									<h4>企业微信</h4><img src="images/weixin.png" alt=""/>
+								</div>
+
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="5" class="btn-secondary" data-bs-dismiss="modal">关闭弹窗</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="bmb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="ft3">
+							<div>
+								<h4>报名表单</h4><img src="images/bmb.jpg" alt=""/>
+							</div>
+
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="5" class="btn-secondary" data-bs-dismiss="modal">关闭弹窗</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="gzh" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="ft3">
+						<div>
+							<h4>报名表单</h4><img src="images/gzh.jpg" alt=""/>
+						</div>
+
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="5" class="btn-secondary" data-bs-dismiss="modal">关闭弹窗</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	</div>
 	<!-- Scripts -->
@@ -656,6 +923,23 @@
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/tiaozhuan.js"></script>
 
+	<script>
+		$(document).ready(function () {
+            const maxLength = 300 // 设置固定显示的字符长度
+            $('.truncate-text').each(function () {
+                const originalText = $(this).text();
+                if (originalText.length > maxLength) {
+                    const truncatedText = originalText.slice(0, maxLength) + '... <a href="#" class="read-more">查看更多</a>';
+                    $(this).html(truncatedText);
+
+                    $(this).find('.read-more').click(function (e) {
+                        e.preventDefault();
+                        $(this).parent().text(originalText);
+                    });
+                }
+            });
+        });
+	</script>
 </body>
 
 </html>
